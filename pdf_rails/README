@@ -1,0 +1,2 @@
+  sudo gem install prawn
+  script/plugin install git://github.com/thorny-sun/prawnto.git

@@ -1,0 +1,15 @@
+<h1>New pdf2</h1>
+
+<% form_for(@pdf2) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :htmlcontent %><br />
+    <%= f.text_field :htmlcontent %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', pdf2s_path %>
