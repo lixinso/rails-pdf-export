@@ -1,0 +1,16 @@
+<h1>Editing resolution_report</h1>
+
+<% form_for(@resolution_report) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :show %><br />
+    <%= f.text_area :show %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @resolution_report %> |
+<%= link_to 'Back', resolution_reports_path %>

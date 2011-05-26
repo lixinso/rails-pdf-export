@@ -20,13 +20,7 @@ class PdfsController < ApplicationController
           format.html
           format.pdf do
             render :pdf => "file_name",
-            :footer => {
-                                :center => "Center",
-                                :left => "Left",
-                                :right => "Right"
-                             }
-            
-            
+            :header => { :right => '[page] of [topage]' }
           end
         end
       end

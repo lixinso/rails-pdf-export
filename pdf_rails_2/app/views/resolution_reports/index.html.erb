@@ -1,0 +1,20 @@
+<h1>Listing resolution_reports</h1>
+
+<table>
+  <tr>
+    <th>Show</th>
+  </tr>
+
+<% @resolution_reports.each do |resolution_report| %>
+  <tr>
+    <td><%=h resolution_report.show %></td>
+    <td><%= link_to 'Show', resolution_report %></td>
+    <td><%= link_to 'Edit', edit_resolution_report_path(resolution_report) %></td>
+    <td><%= link_to 'Destroy', resolution_report, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New resolution_report', new_resolution_report_path %>

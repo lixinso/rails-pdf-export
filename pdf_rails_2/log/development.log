@@ -1,0 +1,143 @@
+
+
+Processing ResolutionReportsController#index (for 127.0.0.1 at 2011-05-26 13:33:21) [GET]
+  [4;36;1mResolutionReport Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: resolution_reports: SELECT * FROM "resolution_reports" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: resolution_reports: SELECT * FROM "resolution_reports" ):
+  app/controllers/resolution_reports_controller.rb:5:in `index'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateResolutionReports (20110526053122)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "resolution_reports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "show" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110526053122')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("resolution_reports")[0m
+
+
+Processing ResolutionReportsController#index (for 127.0.0.1 at 2011-05-26 13:34:03) [GET]
+  [4;36;1mResolutionReport Load (0.3ms)[0m   [0;1mSELECT * FROM "resolution_reports" [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/resolution_reports]
+
+
+Processing ResolutionReportsController#new (for 127.0.0.1 at 2011-05-26 13:34:04) [GET]
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/new
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/resolution_reports/new]
+
+
+Processing ResolutionReportsController#create (for 127.0.0.1 at 2011-05-26 13:34:07) [POST]
+  Parameters: {"resolution_report"=>{"show"=>"asssssss"}, "commit"=>"Create", "authenticity_token"=>"Ib27cKyISIZW16AToDAOlO/nrxn9f6Y/5qKYcQ3ujZs="}
+  [4;35;1mResolutionReport Create (0.3ms)[0m   [0mINSERT INTO "resolution_reports" ("created_at", "updated_at", "show") VALUES('2011-05-26 05:34:07', '2011-05-26 05:34:07', 'asssssss')[0m
+Redirected to http://localhost:3000/resolution_reports/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/resolution_reports]
+
+
+Processing ResolutionReportsController#show (for 127.0.0.1 at 2011-05-26 13:34:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.1ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/show
+Completed in 44ms (View: 40, DB: 0) | 200 OK [http://localhost/resolution_reports/1]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-26 13:34:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (0.1ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+
+ActionView::MissingTemplate (Missing template resolution_reports/show.erb in view path app/views):
+  app/controllers/resolution_reports_controller.rb:22:in `show'
+  app/controllers/resolution_reports_controller.rb:18:in `show'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ResolutionReportsController#index (for 127.0.0.1 at 2011-05-26 13:34:39) [GET]
+  [4;36;1mResolutionReport Load (0.2ms)[0m   [0;1mSELECT * FROM "resolution_reports" [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/resolution_reports]
+
+
+Processing ResolutionReportsController#index (for 127.0.0.1 at 2011-05-26 13:36:03) [GET]
+  [4;36;1mResolutionReport Load (0.4ms)[0m   [0;1mSELECT * FROM "resolution_reports" [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/resolution_reports]
+
+
+Processing ResolutionReportsController#show (for 127.0.0.1 at 2011-05-26 13:36:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (0.1ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/show
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/resolution_reports/1]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-26 13:36:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.1ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+
+ActionView::MissingTemplate (Missing template resolution_reports/show.erb in view path app/views):
+  app/controllers/resolution_reports_controller.rb:30:in `show'
+  app/controllers/resolution_reports_controller.rb:26:in `show'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
