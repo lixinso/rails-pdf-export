@@ -2789,3 +2789,516 @@ Processing Pdf2sController#show (for 127.0.0.1 at 2011-05-26 10:42:28) [GET]
 Rendering template within layouts/pdf2s
 Rendering pdf2s/show
 Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/pdf2s/1]
+
+
+Processing PdfsController#index (for 127.0.0.1 at 2011-05-26 11:06:46) [GET]
+  [4;36;1mPdf Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: pdfs: SELECT * FROM "pdfs" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: pdfs: SELECT * FROM "pdfs" ):
+  app/controllers/pdfs_controller.rb:5:in `index'
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePdf2s (20110526002500)
+Migrating to CreatePdf3s (20110526002834)
+Migrating to CreatePdfs (20110526025549)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "pdfs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content1" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110526025549')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pdf2s")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pdf3s")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pdfs")[0m
+
+
+Processing PdfsController#index (for 127.0.0.1 at 2011-05-26 11:07:02) [GET]
+  [4;35;1mPdf Load (0.3ms)[0m   [0mSELECT * FROM "pdfs" [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/index
+
+ActionView::TemplateError (undefined method `wicked_pdf_stylesheet_link_tag' for #<ActionView::Base:0x102ec5600>) on line #9 of app/views/layouts/pdfs.html.erb:
+6:   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+7:   <title>Pdfs: <%= controller.action_name %></title>
+8:   #<%= stylesheet_link_tag 'scaffold' %>
+9:   <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+10: </head>
+11: <body>
+12: 
+
+    app/views/layouts/pdfs.html.erb:9
+    app/controllers/pdfs_controller.rb:7:in `index'
+    pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PdfsController#index (for 127.0.0.1 at 2011-05-26 11:07:30) [GET]
+  [4;36;1mPdf Load (0.3ms)[0m   [0;1mSELECT * FROM "pdfs" [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/pdfs/]
+
+
+Processing PdfsController#new (for 127.0.0.1 at 2011-05-26 11:07:32) [GET]
+Rendering template within layouts/pdfs
+Rendering pdfs/new
+Completed in 72ms (View: 7, DB: 0) | 200 OK [http://localhost/pdfs/new]
+
+
+Processing PdfsController#create (for 127.0.0.1 at 2011-05-26 11:07:35) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"oDcMvip9FL+zcseBfPZ6hHz5ov5R1P5ohCMVzZoM4eQ=", "pdf"=>{"content1"=>"adfadfasd"}}
+  [4;35;1mPdf Create (0.3ms)[0m   [0mINSERT INTO "pdfs" ("created_at", "updated_at", "content1") VALUES('2011-05-26 03:07:35', '2011-05-26 03:07:35', 'adfadfasd')[0m
+Redirected to http://localhost:3000/pdfs/1
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/pdfs]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:07:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:07:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPdf Load (0.1ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:10:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:10:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPdf Load (0.1ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 2) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Pdf with ID=2):
+  app/controllers/pdfs_controller.rb:16:in `show'
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:10:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:10:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPdf Load (0.2ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:10:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#index (for 127.0.0.1 at 2011-05-26 11:11:01) [GET]
+  [4;35;1mPdf Load (0.3ms)[0m   [0mSELECT * FROM "pdfs" [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/pdfs/]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:11:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#edit (for 127.0.0.1 at 2011-05-26 11:11:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPdf Load (0.1ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/edit
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/pdfs/1/edit]
+
+
+Processing PdfsController#update (for 127.0.0.1 at 2011-05-26 11:11:07) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"oDcMvip9FL+zcseBfPZ6hHz5ov5R1P5ohCMVzZoM4eQ=", "id"=>"1", "pdf"=>{"content1"=>"adfadfasddsfadf"}}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+  [4;35;1mPdf Update (0.2ms)[0m   [0mUPDATE "pdfs" SET "updated_at" = '2011-05-26 03:11:07', "content1" = 'adfadfasddsfadf' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/pdfs/1
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:11:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#edit (for 127.0.0.1 at 2011-05-26 11:11:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPdf Load (0.2ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/edit
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/pdfs/1/edit]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:11:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:11:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPdf Load (0.1ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:12:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#javascripts to js (for 127.0.0.1 at 2011-05-26 11:12:03) [GET]
+  Parameters: {"id"=>"prototype"}
+
+ActionController::UnknownAction (No action responded to javascripts. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#javascripts to js (for 127.0.0.1 at 2011-05-26 11:12:03) [GET]
+  Parameters: {"id"=>"effects"}
+
+ActionController::UnknownAction (No action responded to javascripts. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#images to png (for 127.0.0.1 at 2011-05-26 11:12:03) [GET]
+  Parameters: {"id"=>"rails"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:12:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPdf Load (0.1ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#javascripts to js (for 127.0.0.1 at 2011-05-26 11:12:07) [GET]
+  Parameters: {"id"=>"prototype"}
+
+ActionController::UnknownAction (No action responded to javascripts. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#javascripts to js (for 127.0.0.1 at 2011-05-26 11:12:07) [GET]
+  Parameters: {"id"=>"effects"}
+
+ActionController::UnknownAction (No action responded to javascripts. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#images to png (for 127.0.0.1 at 2011-05-26 11:12:07) [GET]
+  Parameters: {"id"=>"rails"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:12:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-26 11:15:19) [GET]
+
+SyntaxError (/data/projects/rails-pdf-export/pdf_rails/app/controllers/pdfs_controller.rb:32: syntax error, unexpected kEND
+/data/projects/rails-pdf-export/pdf_rails/app/controllers/pdfs_controller.rb:106: syntax error, unexpected $end, expecting kEND):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-26 11:17:34) [GET]
+
+SyntaxError (/data/projects/rails-pdf-export/pdf_rails/app/controllers/pdfs_controller.rb:34: syntax error, unexpected kEND
+/data/projects/rails-pdf-export/pdf_rails/app/controllers/pdfs_controller.rb:108: syntax error, unexpected $end, expecting kEND):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-26 11:17:54) [GET]
+
+SyntaxError (/data/projects/rails-pdf-export/pdf_rails/app/controllers/pdfs_controller.rb:34: syntax error, unexpected kEND
+/data/projects/rails-pdf-export/pdf_rails/app/controllers/pdfs_controller.rb:108: syntax error, unexpected $end, expecting kEND):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (107.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PdfsController#index (for 127.0.0.1 at 2011-05-26 11:23:21) [GET]
+  [4;35;1mPdf Load (0.3ms)[0m   [0mSELECT * FROM "pdfs" [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/pdfs/]
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:23:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf Load (0.1ms)[0m   [0;1mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing PdfsController#javascripts to js (for 127.0.0.1 at 2011-05-26 11:23:23) [GET]
+  Parameters: {"id"=>"prototype"}
+
+ActionController::UnknownAction (No action responded to javascripts. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#javascripts to js (for 127.0.0.1 at 2011-05-26 11:23:23) [GET]
+  Parameters: {"id"=>"effects"}
+
+ActionController::UnknownAction (No action responded to javascripts. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#images to png (for 127.0.0.1 at 2011-05-26 11:23:23) [GET]
+  Parameters: {"id"=>"rails"}
+
+ActionController::UnknownAction (No action responded to images. Actions: create, destroy, edit, index, new, show, and update):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 11:23:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPdf Load (0.1ms)[0m   [0mSELECT * FROM "pdfs" WHERE ("pdfs"."id" = 1) [0m
+Rendering template within layouts/pdfs
+Rendering pdfs/show
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/pdfs/1]

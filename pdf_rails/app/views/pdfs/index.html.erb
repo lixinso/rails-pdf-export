@@ -1,0 +1,23 @@
+<h1>Listing pdfs</h1>
+
+<table>
+  <tr>
+    <th>Content1</th>
+  </tr>
+
+<% @pdfs.each do |pdf| %>
+  <tr>
+    <td><%=h pdf.content1 %></td>
+    <td><%= link_to 'Show', pdf %></td>
+    <td><%= link_to 'Edit', edit_pdf_path(pdf) %></td>
+    <td><%= link_to 'Destroy', pdf, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pdf', new_pdf_path %>
+
+
+<div id="someid"><%= @example_text %></div>

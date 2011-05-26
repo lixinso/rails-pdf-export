@@ -1,0 +1,16 @@
+<h1>Editing pdf</h1>
+
+<% form_for(@pdf) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content1 %><br />
+    <%= f.text_area :content1 %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @pdf %> |
+<%= link_to 'Back', pdfs_path %>

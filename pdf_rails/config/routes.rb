@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :pdfs
+
   map.resources :pdf3s
 
   map.resources :pdf2s
