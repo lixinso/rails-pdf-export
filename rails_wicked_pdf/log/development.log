@@ -141,3 +141,113 @@ ActionView::MissingTemplate (Missing template resolution_reports/show.erb in vie
   /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (internal_server_error)
+
+
+Processing ResolutionReportsController#index (for 127.0.0.1 at 2011-05-27 16:09:39) [GET]
+  [4;36;1mResolutionReport Load (0.7ms)[0m   [0;1mSELECT * FROM "resolution_reports" [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/index
+Completed in 68ms (View: 63, DB: 1) | 200 OK [http://localhost/resolution_reports/]
+
+
+Processing ResolutionReportsController#show (for 127.0.0.1 at 2011-05-27 16:09:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (0.1ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/resolution_reports/1]
+
+
+Processing ResolutionReportsController#edit (for 127.0.0.1 at 2011-05-27 16:09:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.1ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/edit
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/resolution_reports/1/edit]
+
+
+Processing ResolutionReportsController#show (for 127.0.0.1 at 2011-05-27 16:09:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (0.1ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/show
+Completed in 45ms (View: 2, DB: 0) | 200 OK [http://localhost/resolution_reports/1]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-27 16:09:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.1ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+Sending data file_name.pdf
+Completed in 547ms (View: 1, DB: 0) | 200 OK [http://localhost/resolution_reports/1.pdf]
+
+
+Processing ResolutionReportsController#edit (for 127.0.0.1 at 2011-05-27 16:10:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (0.2ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/edit
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/resolution_reports/1/edit]
+
+
+Processing ResolutionReportsController#show (for 127.0.0.1 at 2011-05-27 16:18:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.2ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+Rendering template within layouts/resolution_reports
+Rendering resolution_reports/show
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/resolution_reports/1]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-27 16:18:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (0.2ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+Sending data file_name.pdf
+Completed in 839ms (View: 1, DB: 0) | 200 OK [http://localhost/resolution_reports/1.pdf]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-27 16:20:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.2ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+Sending data file_name.pdf
+Completed in 811ms (View: 61, DB: 0) | 200 OK [http://localhost/resolution_reports/1.pdf]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-27 16:21:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (0.2ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+Sending data file_name.pdf
+Completed in 794ms (View: 1, DB: 0) | 200 OK [http://localhost/resolution_reports/1.pdf]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-27 16:30:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.1ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+Sending data file_name.pdf
+Completed in 771ms (View: 1, DB: 0) | 200 OK [http://localhost/resolution_reports/1.pdf]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-27 17:26:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mResolutionReport Load (5.6ms)[0m   [0mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+Sending data file_name.pdf
+Completed in 5311ms (View: 263, DB: 0) | 200 OK [http://localhost/resolution_reports/1.pdf]
+
+
+Processing ResolutionReportsController#show to pdf (for 127.0.0.1 at 2011-05-27 18:27:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mResolutionReport Load (0.3ms)[0m   [0;1mSELECT * FROM "resolution_reports" WHERE ("resolution_reports"."id" = 1) [0m
+***************WICKED***************
+Rendering resolution_reports/show
+Sending data file_name.pdf
+Completed in 3430ms (View: 1, DB: 0) | 200 OK [http://localhost/resolution_reports/1.pdf]

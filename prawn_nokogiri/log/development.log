@@ -1,0 +1,923 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateInvoices (20110601021449)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "invoices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "html_content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110601021449')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("invoices")[0m
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-01 10:18:17) [GET]
+  [4;36;1mInvoice Load (0.3ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/invoices/]
+
+
+Processing InvoicesController#new (for 127.0.0.1 at 2011-06-01 10:18:18) [GET]
+Rendering template within layouts/invoices
+Rendering invoices/new
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/invoices/new]
+
+
+Processing InvoicesController#new (for 127.0.0.1 at 2011-06-01 10:18:24) [GET]
+Rendering template within layouts/invoices
+Rendering invoices/new
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/invoices/new]
+
+
+Processing InvoicesController#create (for 127.0.0.1 at 2011-06-01 10:18:27) [POST]
+  Parameters: {"commit"=>"Create", "invoice"=>{"html_content"=>"hello"}, "authenticity_token"=>"632Mj5RSXDKWIPQ6plIumWcqsgbM0xgsTLhCwP+fT/A="}
+  [4;35;1mInvoice Create (0.4ms)[0m   [0mINSERT INTO "invoices" ("created_at", "updated_at", "html_content") VALUES('2011-06-01 02:18:27', '2011-06-01 02:18:27', 'hello')[0m
+Redirected to http://localhost:3000/invoices/1
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 10:18:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:18:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Completed in 4ms (View: 0, DB: 0) | 406 Not Acceptable [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:18:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Completed in 3ms (View: 0, DB: 0) | 406 Not Acceptable [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:18:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Completed in 7ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:19:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Completed in 4ms (View: 0, DB: 0) | 406 Not Acceptable [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:20:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:20:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 4ms (View: 0, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:20:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:20:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-01 10:23:31) [GET]
+  [4;36;1mInvoice Load (0.6ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/invoices/]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-01 10:23:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/invoices/1/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-01 10:23:34) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"hello"}, "authenticity_token"=>"632Mj5RSXDKWIPQ6plIumWcqsgbM0xgsTLhCwP+fT/A=", "id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Redirected to http://localhost:3000/invoices/1
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 10:23:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:23:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:25:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 185ms (View: 181, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:26:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 99ms (View: 96, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:30:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `content' for nil:NilClass) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@document.content, pdf)
+
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (91.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:31:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `content' for #<Invoice:0x1034e52b0>) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.content, pdf)
+
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (85.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:32:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 104ms (View: 101, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-01 10:32:21) [GET]
+  [4;36;1mInvoice Load (0.4ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices/]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 10:32:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:32:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 146ms (View: 142, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-01 10:33:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/1/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-01 10:33:39) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>hello</p>"}, "authenticity_token"=>"632Mj5RSXDKWIPQ6plIumWcqsgbM0xgsTLhCwP+fT/A=", "id"=>"1"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+  [4;35;1mInvoice Update (0.6ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-01 02:33:39', "html_content" = '<p>hello</p>' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/invoices/1
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 10:33:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:33:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant ApplicationHelper::Nokogiri) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    app/helpers/application_helper.rb:26:in `render_paragraph'
+    app/helpers/application_helper.rb:17:in `instance_eval'
+    app/helpers/application_helper.rb:17:in `render_paragraph'
+    app/helpers/application_helper.rb:10:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (85.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:34:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant ApplicationHelper::Nokogiri) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    app/helpers/application_helper.rb:26:in `render_paragraph'
+    app/helpers/application_helper.rb:17:in `instance_eval'
+    app/helpers/application_helper.rb:17:in `render_paragraph'
+    app/helpers/application_helper.rb:10:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (83.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:36:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 109ms (View: 105, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-01 10:37:28) [GET]
+  [4;35;1mInvoice Load (0.4ms)[0m   [0mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/invoices/]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-01 10:37:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/invoices/1/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-01 10:37:34) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike></p>\r\n<ol>\r\n\t<li>\r\n\t\tli<strong>st1</strong>23</li>\r\n\t<li>\r\n\t\tggg</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\thhh &nbsp;hh</li>\r\n\t<li>\r\n\t\tlist 222</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<hr />\r\n<blockquote>\r\n\t<p>\r\n\t\tblockquote</p>\r\n</blockquote>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\t&nbsp;</p>\r\n"}, "authenticity_token"=>"632Mj5RSXDKWIPQ6plIumWcqsgbM0xgsTLhCwP+fT/A=", "id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+  [4;36;1mInvoice Update (0.3ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-01 02:37:34', "html_content" = '<p>
+	&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike></p>
+<ol>
+	<li>
+		li<strong>st1</strong>23</li>
+	<li>
+		ggg</li>
+</ol>
+<ul>
+	<li>
+		hhh &nbsp;hh</li>
+	<li>
+		list 222</li>
+</ul>
+<p>
+	&nbsp;</p>
+<hr />
+<blockquote>
+	<p>
+		blockquote</p>
+</blockquote>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/invoices/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 10:37:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:37:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 404ms (View: 400, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 10:51:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 347ms (View: 343, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 11:13:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:13:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 412ms (View: 408, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:14:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 348ms (View: 345, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:14:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 367ms (View: 363, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:15:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 347ms (View: 343, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:15:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 365ms (View: 360, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 11:16:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:16:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 356ms (View: 352, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 11:16:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:16:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 410ms (View: 407, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 11:19:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:19:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 377ms (View: 373, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:20:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 402ms (View: 398, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 11:20:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:20:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 361ms (View: 357, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:20:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 401ms (View: 397, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:22:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 349ms (View: 345, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:26:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 424ms (View: 420, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:26:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 379ms (View: 375, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:27:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 403ms (View: 400, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:28:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 370ms (View: 367, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:28:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 372ms (View: 368, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:31:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 430ms (View: 427, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:33:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 369ms (View: 364, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:37:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `content' for nil:NilClass) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    app/helpers/application_helper.rb:39:in `render_paragraph'
+    app/helpers/application_helper.rb:22:in `instance_eval'
+    app/helpers/application_helper.rb:22:in `render_paragraph'
+    app/helpers/application_helper.rb:15:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.1ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:39:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined local variable or method `markup' for #<Prawn::Document:0x102e3c648>) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    prawn (0.11.1) lib/prawn/graphics.rb:345:in `method_missing'
+    app/helpers/application_helper.rb:43:in `render_paragraph'
+    app/helpers/application_helper.rb:42:in `each'
+    app/helpers/application_helper.rb:42:in `render_paragraph'
+    app/helpers/application_helper.rb:22:in `instance_eval'
+    app/helpers/application_helper.rb:22:in `render_paragraph'
+    app/helpers/application_helper.rb:15:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:40:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 395ms (View: 391, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:41:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 359ms (View: 355, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:43:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 413ms (View: 410, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:43:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 371ms (View: 368, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 11:44:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:44:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 434ms (View: 429, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:45:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 381ms (View: 377, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:46:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 356ms (View: 352, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:47:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 373ms (View: 369, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:51:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 159ms (View: 155, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:53:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 369ms (View: 365, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:58:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `inner_html' for nil:NilClass) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    app/helpers/application_helper.rb:59:in `render_paragraph'
+    app/helpers/application_helper.rb:22:in `instance_eval'
+    app/helpers/application_helper.rb:22:in `render_paragraph'
+    app/helpers/application_helper.rb:15:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (88.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:59:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (private method `gsub!' called for #<Nokogiri::HTML::Document:0x102f290d8>) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    app/helpers/application_helper.rb:34:in `render_paragraph'
+    app/helpers/application_helper.rb:22:in `instance_eval'
+    app/helpers/application_helper.rb:22:in `render_paragraph'
+    app/helpers/application_helper.rb:15:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (89.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 11:59:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (private method `gsub' called for #<Nokogiri::HTML::Document:0x102f42650>) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    app/helpers/application_helper.rb:34:in `render_paragraph'
+    app/helpers/application_helper.rb:22:in `instance_eval'
+    app/helpers/application_helper.rb:22:in `render_paragraph'
+    app/helpers/application_helper.rb:15:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (83.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+/!\ FAILSAFE /!\  Wed Jun 01 11:59:57 +0800 2011
+  Status: 500 Internal Server Error
+  /data/projects/rails-pdf-export/prawn_nokogiri/app/helpers/application_helper.rb:39: syntax error, unexpected tIDENTIFIER, expecting ')'
+      mappings = { :em => :i, :strong => :b,...
+              ^
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:197:in `default_helper_module!'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:212:in `__send__'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:212:in `inherited'
+    /data/projects/rails-pdf-export/prawn_nokogiri/app/controllers/application_controller.rb:4
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+    script/server:3
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 12:00:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 373ms (View: 369, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]

@@ -3442,3 +3442,29 @@ Processing PdfsController#show (for 127.0.0.1 at 2011-05-26 13:39:37) [GET]
 Rendering template within layouts/pdfs
 Rendering pdfs/show
 Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/pdfs/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-31 18:12:48) [GET]
+
+ActionController::RoutingError (No route matches "/resolutions/" with {:method=>:get}):
+  pdfkit (0.5.0) lib/pdfkit/middleware.rb:15:in `call'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing Pdf2sController#show (for 127.0.0.1 at 2011-05-31 18:13:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPdf2 Load (27.9ms)[0m   [0;1mSELECT * FROM "pdf2s" WHERE ("pdf2s"."id" = 1) [0m
+Rendering template within layouts/pdf2s
+Rendering pdf2s/show
+Completed in 191ms (View: 157, DB: 28) | 200 OK [http://localhost/pdf2s/1]

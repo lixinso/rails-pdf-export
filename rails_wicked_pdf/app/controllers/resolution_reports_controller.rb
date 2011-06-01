@@ -27,7 +27,9 @@ class ResolutionReportsController < ApplicationController
         format.html
         format.pdf do
           render :pdf => "file_name",
-          :header => { :right => '[page] of [topage]' }
+          :header => { :right => '[page] of [topage]' ,
+            :disable_smart_shrinking        => false
+            }
         end
       end
     
