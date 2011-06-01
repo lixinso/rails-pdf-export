@@ -921,3 +921,363 @@ Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 12:00:23)
   [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
 Rendering invoices/show
 Completed in 373ms (View: 369, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:28:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 345ms (View: 341, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:32:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 358ms (View: 354, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:33:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 396ms (View: 393, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:33:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 368ms (View: 364, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:35:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `join' for "    ":String) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    app/helpers/application_helper.rb:41:in `render_paragraph'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:239:in `each'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `upto'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `each'
+    app/helpers/application_helper.rb:40:in `render_paragraph'
+    app/helpers/application_helper.rb:22:in `instance_eval'
+    app/helpers/application_helper.rb:22:in `render_paragraph'
+    app/helpers/application_helper.rb:15:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+/!\ FAILSAFE /!\  Wed Jun 01 13:37:38 +0800 2011
+  Status: 500 Internal Server Error
+  /data/projects/rails-pdf-export/prawn_nokogiri/app/helpers/application_helper.rb:41: syntax error, unexpected ')', expecting kEND
+/data/projects/rails-pdf-export/prawn_nokogiri/app/helpers/application_helper.rb:64: syntax error, unexpected $end, expecting kEND
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:197:in `default_helper_module!'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:212:in `__send__'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:212:in `inherited'
+    /data/projects/rails-pdf-export/prawn_nokogiri/app/controllers/application_controller.rb:4
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Wed Jun 01 13:37:52 +0800 2011
+  Status: 500 Internal Server Error
+  /data/projects/rails-pdf-export/prawn_nokogiri/app/helpers/application_helper.rb:41: syntax error, unexpected ')', expecting kEND
+/data/projects/rails-pdf-export/prawn_nokogiri/app/helpers/application_helper.rb:64: syntax error, unexpected $end, expecting kEND
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:197:in `default_helper_module!'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:212:in `__send__'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/helpers.rb:212:in `inherited'
+    /data/projects/rails-pdf-export/prawn_nokogiri/app/controllers/application_controller.rb:4
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/admin/.rvm/gems/ruby-1.8.7-p334/gems/rails-2.3.8/lib/commands/server.rb:111
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+    script/server:3
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:38:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 361ms (View: 357, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:39:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 415ms (View: 411, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 13:39:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 388ms (View: 383, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 14:06:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (no block given) on line #11 of app/views/invoices/show.pdf.prawn:
+8:  
+9: pdf.text "======================"
+10: 
+11: wrap(@invoice.html_content, pdf)
+
+    prawn (0.11.1) lib/prawn/document/bounding_box.rb:260:in `indent'
+    prawn (0.11.1) lib/prawn/document.rb:469:in `indent'
+    app/helpers/application_helper.rb:55:in `render_paragraph'
+    app/helpers/application_helper.rb:22:in `instance_eval'
+    app/helpers/application_helper.rb:22:in `render_paragraph'
+    app/helpers/application_helper.rb:15:in `wrap'
+    app/views/invoices/show.pdf.prawn:11:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 14:07:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 364ms (View: 360, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 14:10:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 359ms (View: 355, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 15:02:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 414ms (View: 353, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-01 15:02:25) [GET]
+  [4;35;1mInvoice Load (0.4ms)[0m   [0mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices/]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-01 15:02:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/invoices/1/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-01 15:05:05) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:\r\n\r\n\"The sidebar keyword indicates that the referenced document, if retrieved, is\r\nintended to be shown in a secondary browsing context (if possible), instead of\r\nin the current browsing context.\"\r\n\r\nThis seems to duplicate the functionality of @target=\"_blank\". Who is using\r\nthis? Who has implemented this?\r\n\r\n</p>\r\n<ol>\r\n\t<li>\r\n\t\tli<strong>st1</strong>23</li>\r\n\t<li>\r\n\t\tggg</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\thhh &nbsp;hh</li>\r\n\t<li>\r\n\t\tlist 222</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<hr />\r\n<blockquote>\r\n\t<p>\r\n\t\tblockquote</p>\r\n</blockquote>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\t&nbsp;</p>\r\n"}, "authenticity_token"=>"632Mj5RSXDKWIPQ6plIumWcqsgbM0xgsTLhCwP+fT/A=", "id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-01 07:05:05', "html_content" = '<p>
+	&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:
+
+"The sidebar keyword indicates that the referenced document, if retrieved, is
+intended to be shown in a secondary browsing context (if possible), instead of
+in the current browsing context."
+
+This seems to duplicate the functionality of @target="_blank". Who is using
+this? Who has implemented this?
+
+</p>
+<ol>
+	<li>
+		li<strong>st1</strong>23</li>
+	<li>
+		ggg</li>
+</ol>
+<ul>
+	<li>
+		hhh &nbsp;hh</li>
+	<li>
+		list 222</li>
+</ul>
+<p>
+	&nbsp;</p>
+<hr />
+<blockquote>
+	<p>
+		blockquote</p>
+</blockquote>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/invoices/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-01 15:05:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-01 15:05:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 367ms (View: 363, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-01 15:12:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices/1/edit]

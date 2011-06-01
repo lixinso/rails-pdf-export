@@ -38,7 +38,7 @@ module ApplicationHelper
       end
       
       markup.xpath('//ul/li').each do |item|
-        item.replace "BULLET-POINT #{item.text}\n"
+        item.replace "    " + "BULLET-POINT #{item.text}\n"
       end
       markup.xpath('//ol/li').each_with_index do |item, index|
         item.replace "#{index + 1}. #{item.inner_html}\n"
@@ -46,12 +46,16 @@ module ApplicationHelper
       
       ['p', 'ol', 'ul' , 'blockquote'].each do |tag|
         markup.xpath("//#{tag}").each do |t|
-          t.replace ("section:" + t.inner_html)
+          t.replace (t.inner_html)
         end
       end
       
-      paragraph = markup.at_xpath('//body').inner_html.gsub("BULLET-POINT", "•").strip
+      #paragraph = markup.at_xpath('//body').inner_html.gsub("BULLET-POINT", "•").strip
+      paragraph = markup.at_xpath('//body').inner_html.gsub("BULLET-POINT", "•")
       text paragraph, :inline_format => true
+      #indent 20 do
+      #  text "    helloworld"
+      #end
     end
   end
 
