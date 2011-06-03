@@ -13,6 +13,7 @@ module Prawn
       @@TABLE_MARKER = "TABLE"
       @@IMG_MARKER = "IMG"
       @@BREAK_MARKER = 'BREAK'
+      @@BR_MARKER = 'BR_MARKER'
       @@HR_MARKER = 'HR_MARKER'
     
       @@DEFAULT_STRIP_TAGS = ['span', 'div', 'body', 'html', 'form', 'head'] 
@@ -23,7 +24,9 @@ module Prawn
       #def self.html(html,options={})
       def self.html(html)
       
-         @@DEFAULT_ERASE_TAGS.each do |tag|
+          #TODO:sanitize before use?
+      
+          @@DEFAULT_ERASE_TAGS.each do |tag|
             html.erase_tags!(tag)
           end
           
@@ -90,7 +93,7 @@ module Prawn
           
           result.replace_tags!('hr', sep + @@HR_MARKER + sep)          
           
-          result.replace_tags!('br', sep + @@BREAK_MARKER + sep)
+          result.replace_tags!('br', sep + @@BR_MARKER + sep)
           #result.strip_tags!('b')
           
            result.remove_newlines!

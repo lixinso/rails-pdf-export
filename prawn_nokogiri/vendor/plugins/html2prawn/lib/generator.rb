@@ -19,6 +19,7 @@ module Prawn
          xpos = 0
          line_height = 12
          break_height = line_height + (line_height / 4)
+         br_height = line_height*2/3
       
          table_line_height =  16
          table_font_size =  12
@@ -26,9 +27,13 @@ module Prawn
          # generate pdf      
          list[:html_list].each do |item|
            case item 
+             #Why makes the space so large with it?
            when 'BREAK'
-             pdf.move_down break_height
-             ypos += break_height
+             #pdf.move_down break_height
+             #ypos += break_height
+           when 'BR_MARKER'
+             #pdf.move_down br_height
+             #ypos += br_height
            when 'HR_MARKER'
               pdf.move_down 5
               pdf.stroke { pdf.horizontal_rule }
@@ -36,9 +41,9 @@ module Prawn
            when 'NEW_PAGE'
              pdf.start_new_page
            else
-             breaks = item.scan(/<br>/i).length + item.scan(/<br\/>/i).length
+             #breaks = item.scan(/<br>/i).length + item.scan(/<br\/>/i).length
              ypos = start_page_ypos if !ypos 
-             ypos += (breaks * break_height)
+             #ypos += (breaks * break_height)
              puts item
              if item != nil
                pdf.text item, :inline_format => true, :size => 10.5, :leading => 5
