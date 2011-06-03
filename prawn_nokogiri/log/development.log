@@ -2736,3 +2736,278 @@ Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:31:26)
   [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 4) [0m
 Rendering invoices/show
 Completed in 356ms (View: 352, DB: 0) | 200 OK [http://localhost/invoices/4.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 13:44:24) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 4) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/4]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:44:25) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 4) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined local variable or method `li' for Prawn::HTML5::Parser:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:239:in `each'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `upto'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `each'
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (89.6ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:44:48) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 4) [0m
+Rendering invoices/show
+Completed in 337ms (View: 333, DB: 0) | 200 OK [http://localhost/invoices/4.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-03 13:48:00) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 4) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/invoices/4/edit]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-03 13:48:09) [GET]
+  [4;36;1mInvoice Load (0.3ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#new (for 127.0.0.1 at 2011-06-03 13:48:11) [GET]
+Rendering template within layouts/invoices
+Rendering invoices/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/invoices/new]
+
+
+Processing InvoicesController#create (for 127.0.0.1 at 2011-06-03 13:48:20) [POST]
+  Parameters: {"commit"=>"Create", "invoice"=>{"html_content"=>"<p>\r\n\t&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:\r\n\r\n\"The sidebar keyword indicates that the referenced document, if retrieved, is\r\nintended to be shown in a secondary browsing context (if possible), instead of\r\nin the current browsing context.\"\r\n\r\nThis seems to duplicate the functionality of @target=\"_blank\". Who is using\r\nthis? Who has implemented this?\r\n\r\n</p>\r\n<ol>\r\n\t<li>\r\n\t\tlist123</li>\r\n\t<li>\r\n\t\tggg</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\thhh &nbsp;hh</li>\r\n\t<li>\r\n\t\tlist 222</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<hr />\r\n<blockquote>\r\n\t\tblockquote\r\n</blockquote>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\r\n"}, "authenticity_token"=>"YgacHmEoFpCL3RniZjfLL4N7foW4WcyMJgMM/obZxyw="}
+  [4;35;1mInvoice Create (0.3ms)[0m   [0mINSERT INTO "invoices" ("created_at", "updated_at", "html_content") VALUES('2011-06-03 05:48:20', '2011-06-03 05:48:20', '<p>
+	&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:
+
+"The sidebar keyword indicates that the referenced document, if retrieved, is
+intended to be shown in a secondary browsing context (if possible), instead of
+in the current browsing context."
+
+This seems to duplicate the functionality of @target="_blank". Who is using
+this? Who has implemented this?
+
+</p>
+<ol>
+	<li>
+		list123</li>
+	<li>
+		ggg</li>
+</ol>
+<ul>
+	<li>
+		hhh &nbsp;hh</li>
+	<li>
+		list 222</li>
+</ul>
+<p>
+	&nbsp;</p>
+<hr />
+<blockquote>
+		blockquote
+</blockquote>
+<p>
+	&nbsp;</p>
+<p>
+
+')[0m
+Redirected to http://localhost:3000/invoices/5
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 13:48:20) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:48:22) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 251ms (View: 248, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-03 13:48:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/5/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-03 13:48:48) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:\r\n\r\n\"The sidebar keyword indicates that the referenced document, if retrieved, is\r\nintended to be shown in a secondary browsing context (if possible), instead of\r\nin the current browsing context.\"\r\n\r\nThis seems to duplicate the functionality of @target=\"_blank\". Who is using\r\nthis? Who has implemented this?\r\n\r\n</p>\r\n<ol>\r\n\t<li>\r\n\t\tlist123</li>\r\n\t<li>\r\n\t\tggg</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\thhh &nbsp;hh</li>\r\n\t<li>\r\n\t\tlist 222</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<hr />\r\n<blockquote>blockquote</blockquote>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\r\n"}, "authenticity_token"=>"YgacHmEoFpCL3RniZjfLL4N7foW4WcyMJgMM/obZxyw=", "id"=>"5"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-03 05:48:48', "html_content" = '<p>
+	&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:
+
+"The sidebar keyword indicates that the referenced document, if retrieved, is
+intended to be shown in a secondary browsing context (if possible), instead of
+in the current browsing context."
+
+This seems to duplicate the functionality of @target="_blank". Who is using
+this? Who has implemented this?
+
+</p>
+<ol>
+	<li>
+		list123</li>
+	<li>
+		ggg</li>
+</ol>
+<ul>
+	<li>
+		hhh &nbsp;hh</li>
+	<li>
+		list 222</li>
+</ul>
+<p>
+	&nbsp;</p>
+<hr />
+<blockquote>blockquote</blockquote>
+<p>
+	&nbsp;</p>
+<p>
+
+' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/invoices/5
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 13:48:49) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:48:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 214ms (View: 211, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-03 13:49:18) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/5/edit]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-03 13:51:35) [GET]
+  [4;36;1mInvoice Load (0.7ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 34ms (View: 29, DB: 1) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 13:51:37) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:51:38) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 391ms (View: 388, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:52:32) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 363ms (View: 359, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 13:54:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:54:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (private method `gsub!' called for Prawn::HTML5::Parser:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:55:26) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 343ms (View: 340, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:57:58) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 257ms (View: 254, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]

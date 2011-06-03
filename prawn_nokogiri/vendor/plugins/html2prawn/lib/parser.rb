@@ -48,10 +48,7 @@ module Prawn
           
           
           doc = Nokogiri::HTML.parse(html)
-          
 
-          
-          
           result = html
           #result = doc.xpath("//body").to_s
           
@@ -59,7 +56,7 @@ module Prawn
             puts "parsing ul"
             res = "<br/>"
             ul.css('li').each_with_index do |li, index|
-              res << "- #{li.inner_html} <br/>"
+              res << "• #{li.inner_html} <br/>"
             end
             result.replace_tag!('ul', res)
           end
@@ -74,6 +71,17 @@ module Prawn
             result.replace_tag!('ol', res)
           end
           
+          #Why doesn't work
+          #doc.css('blockquote').each do |blockquote|
+          #  puts "parsing blockquote"
+          #  res = "<br/>#{blockquote.inner_html}<br/>"
+          #  result.replace_tag!('blockquote', res)
+          #end
+          
+          #parser blockquote
+          result.gsub!(/<\/blockquote>/i, "<br/>")
+          result.gsub!(/<blockquote*>/i, "<br/>")
+           
           result.replace_start_tags_marker!('p', @@BREAK_MARKER)
           result.strip_tags!('p')
           
@@ -83,7 +91,6 @@ module Prawn
            result.remove_newlines!
            
            result.gsub!(/:#:/,"").gsub!(/&nbsp;/," ")
-           
            
            #res_list = {:html_list => result.split(/:#:/)}
            res_list = {:html_list => result.split(/BREAK/)}
