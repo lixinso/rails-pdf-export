@@ -13,9 +13,10 @@ module Prawn
       @@TABLE_MARKER = "TABLE"
       @@IMG_MARKER = "IMG"
       @@BREAK_MARKER = 'BREAK'
+      @@HR_MARKER = 'HR_MARKER'
     
       @@DEFAULT_STRIP_TAGS = ['span', 'div', 'body', 'html', 'form', 'head'] 
-      @@DEFAULT_ERASE_TAGS = ['object', 'script', 'applet', 'select', 'button', 'input', 'textarea', 'style', 'iframe', 'meta', 'link', 'hr']
+      @@DEFAULT_ERASE_TAGS = ['object', 'script', 'applet', 'select', 'button', 'input', 'textarea', 'style', 'iframe', 'meta', 'link']
       @@H_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'h8', 'h9']    
       @@BLOCK_TAGS = ['p','blockquote']
       
@@ -85,15 +86,20 @@ module Prawn
           result.replace_start_tags_marker!('p', @@BREAK_MARKER)
           result.strip_tags!('p')
           
-          result.replace_tags!('b', @@BREAK_MARKER)
+          sep = ":#:"
+          
+          result.replace_tags!('hr', sep + @@HR_MARKER + sep)          
+          
+          result.replace_tags!('br', sep + @@BREAK_MARKER + sep)
           #result.strip_tags!('b')
           
            result.remove_newlines!
            
-           result.gsub!(/:#:/,"").gsub!(/&nbsp;/," ")
+           #result.gsub!(/:#:/,"")
+           result.gsub!(/&nbsp;/," ")
            
-           #res_list = {:html_list => result.split(/:#:/)}
-           res_list = {:html_list => result.split(/BREAK/)}
+           res_list = {:html_list => result.split(/:#:/)}
+           #res_list = {:html_list => result.split(/BREAK/)}
 
       
       end

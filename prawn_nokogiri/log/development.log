@@ -3011,3 +3011,98 @@ Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 13:57:58)
   [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
 Rendering invoices/show
 Completed in 257ms (View: 254, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:07:51) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 266ms (View: 263, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:08:12) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 334ms (View: 330, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-03 14:36:49) [GET]
+  [4;36;1mInvoice Load (0.5ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 35ms (View: 29, DB: 1) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 14:36:53) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:36:55) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 264ms (View: 259, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:37:29) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 341ms (View: 337, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 14:44:31) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:44:32) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 481ms (View: 478, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 14:50:48) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:50:49) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 465ms (View: 461, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 14:51:13) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/5]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:51:14) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 351ms (View: 348, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 14:51:31) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 5) [0m
+Rendering invoices/show
+Completed in 435ms (View: 431, DB: 0) | 200 OK [http://localhost/invoices/5.pdf]
