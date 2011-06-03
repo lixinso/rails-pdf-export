@@ -57,16 +57,6 @@ module Prawn
            
          end
        end
-      #------------------------------------------------------------
-      
-      
-      def self.generate_pdf(content, pdf)
-        paragraphs = Prawn::HTML5::Parser.content_to_paragraphs(content)
-        while paragraph = paragraphs.shift
-          Prawn::HTML5::Parser.render_paragraph(paragraph, pdf)
-        end
-      end
-
 
     end
   end
