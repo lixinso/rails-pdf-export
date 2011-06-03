@@ -1281,3 +1281,1029 @@ Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-01 15:12:24) [GET]
 Rendering template within layouts/invoices
 Rendering invoices/edit
 Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices/1/edit]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-02 13:43:24) [GET]
+  [4;36;1mInvoice Load (0.7ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 95ms (View: 86, DB: 1) | 200 OK [http://localhost/invoices/]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-02 13:43:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 40ms (View: 37, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 13:43:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 610ms (View: 606, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 13:59:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 347ms (View: 344, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:05:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant Prawn::HTML) on line #13 of app/views/invoices/show.pdf.prawn:
+10:  
+11: pdf.text "======================"
+12: 
+13: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:13:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:05:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant Prawn::HTML) on line #14 of app/views/invoices/show.pdf.prawn:
+11:  
+12: pdf.text "======================"
+13: 
+14: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:14:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (82.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:07:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant Prawn::HTML) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (98.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:07:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (no such file to load -- Prawn::HTML) on line #4 of app/views/invoices/show.pdf.prawn:
+1: require 'parser'
+2: require 'generator'
+3: require 'prawn'
+4: require 'Prawn::HTML'
+5: 
+6: pdf.move_down 70
+7: 
+
+    app/views/invoices/show.pdf.prawn:4:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (82.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:08:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `generate_pdf' for Prawn::HTML::Generator:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:09:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `generate_pdf' for Prawn::HTML::Generator:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:10:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `generate_pdf' for Prawn::HTML::Generator:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (50.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:10:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `generate_pdf' for Prawn::HTML::Generator:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:11:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `generate_pdf' for Prawn::HTML::Generator:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (90.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:12:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `aaa' for Prawn::HTML::Generator:Class) on line #16 of app/views/invoices/show.pdf.prawn:
+13: pdf.text "======================"
+14: 
+15: #Prawn::HTML::Generator.generate_pdf(@invoice.html_content, pdf)
+16: Prawn::HTML::Generator.aaa
+
+    app/views/invoices/show.pdf.prawn:16:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (85.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:15:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant Prawn::HTML5) on line #16 of app/views/invoices/show.pdf.prawn:
+13: pdf.text "======================"
+14: 
+15: #Prawn::HTML5::Generator.generate_pdf(@invoice.html_content, pdf)
+16: Prawn::HTML5::Generator.aaa
+
+    app/views/invoices/show.pdf.prawn:16:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (86.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:15:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 224ms (View: 220, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-02 14:15:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 353ms (View: 350, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-03 10:29:24) [GET]
+  [4;36;1mInvoice Load (0.7ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 58ms (View: 54, DB: 1) | 200 OK [http://localhost/invoices/]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 10:29:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 26ms (View: 22, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:29:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (/data/projects/rails-pdf-export/prawn_nokogiri/vendor/plugins/html2prawn/lib/generator.rb:55: syntax error, unexpected $end, expecting kEND) on line #2 of app/views/invoices/show.pdf.prawn:
+1: require 'parser'
+2: require 'generator'
+3: require 'prawn'
+4: 
+5: pdf.move_down 70
+
+    app/views/invoices/show.pdf.prawn:2:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (49.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:32:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant Prawn::Assist) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:34:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant Prawn::Assist) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:35:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (uninitialized constant Prawn::Assist) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 10:35:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:35:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `erase_tags!' for #<String:0x1034027f8>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:49:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `erase_tags!' for #<String:0x1034027f8>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-03 10:51:00) [GET]
+  [4;36;1mInvoice Load (0.5ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 10:51:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:51:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `erase_tags!' for #<String:0x103202110>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (83.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 10:59:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `erase_tags!' for #<String:0x10345ba88>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (82.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:00:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `replace_tag!' for #<String:0x1034027f8>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:239:in `each'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `upto'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `each'
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:00:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `replace_tag!' for #<String:0x1034027f8>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:239:in `each'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `upto'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `each'
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:01:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `replace_tag!' for #<String:0x1034027f8>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:239:in `each'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `upto'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `each'
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.2ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:05:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `replace_tag!' for #<String:0x102e5dac8>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:239:in `each'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `upto'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `each'
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:05:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `replace_tag!' for #<String:0x1034027f8>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:239:in `each'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `upto'
+    nokogiri (1.4.4) lib/nokogiri/xml/node_set.rb:238:in `each'
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:07:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 255ms (View: 251, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:09:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 173ms (View: 169, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:09:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `blank' for "":String) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:10:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `blank' for "":String) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:10:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 517ms (View: 514, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:13:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 367ms (View: 364, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:14:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 372ms (View: 368, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:14:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering invoices/show
+Completed in 240ms (View: 237, DB: 0) | 200 OK [http://localhost/invoices/1.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-03 11:17:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 35ms (View: 32, DB: 0) | 200 OK [http://localhost/invoices/1/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-03 11:18:02) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:\r\n\r\n\"The sidebar keyword indicates that the referenced document, if retrieved, is\r\nintended to be shown in a secondary browsing context (if possible), instead of\r\nin the current browsing context.\"\r\n\r\nThis seems to duplicate the functionality of @target=\"_blank\". Who is using\r\nthis? Who has implemented this?\r\n\r\n</p>\r\n<ol>\r\n\t<li>\r\n\t\tli<strong>st1</strong>23</li>\r\n\t<li>\r\n\t\tggg</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\thhh &nbsp;hh</li>\r\n\t<li>\r\n\t\tlist 222</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<hr />\r\n<blockquote>\r\n\t<p>\r\n\t\tblockquote</p>\r\n</blockquote>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\r\n"}, "authenticity_token"=>"YgacHmEoFpCL3RniZjfLL4N7foW4WcyMJgMM/obZxyw=", "id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+  [4;35;1mInvoice Update (0.3ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-03 03:18:02', "html_content" = '<p>
+	&nbsp;&nbsp;<strong>House</strong> <em>Resolved</em>&nbsp;<u>concurring</u> <strike>That</strike>From the spec:
+
+"The sidebar keyword indicates that the referenced document, if retrieved, is
+intended to be shown in a secondary browsing context (if possible), instead of
+in the current browsing context."
+
+This seems to duplicate the functionality of @target="_blank". Who is using
+this? Who has implemented this?
+
+</p>
+<ol>
+	<li>
+		li<strong>st1</strong>23</li>
+	<li>
+		ggg</li>
+</ol>
+<ul>
+	<li>
+		hhh &nbsp;hh</li>
+	<li>
+		list 222</li>
+</ul>
+<p>
+	&nbsp;</p>
+<hr />
+<blockquote>
+	<p>
+		blockquote</p>
+</blockquote>
+<p>
+	&nbsp;</p>
+<p>
+
+' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/invoices/1
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/1]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 11:18:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 52ms (View: 49, DB: 0) | 200 OK [http://localhost/invoices/1]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-03 11:46:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 1) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/1/edit]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-03 11:46:37) [GET]
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#new (for 127.0.0.1 at 2011-06-03 11:46:39) [GET]
+Rendering template within layouts/invoices
+Rendering invoices/new
+Completed in 40ms (View: 37, DB: 0) | 200 OK [http://localhost/invoices/new]
+
+
+Processing InvoicesController#create (for 127.0.0.1 at 2011-06-03 11:47:09) [POST]
+  Parameters: {"commit"=>"Create", "invoice"=>{"html_content"=>"<p>ppppp</p>\r\nhelllo\r\n<br/>\r\n"}, "authenticity_token"=>"YgacHmEoFpCL3RniZjfLL4N7foW4WcyMJgMM/obZxyw="}
+  [4;35;1mInvoice Create (19.0ms)[0m   [0mINSERT INTO "invoices" ("created_at", "updated_at", "html_content") VALUES('2011-06-03 03:47:09', '2011-06-03 03:47:09', '<p>ppppp</p>
+helllo
+<br/>
+')[0m
+Redirected to http://localhost:3000/invoices/2
+Completed in 41ms (DB: 19) | 302 Found [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 11:47:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 2) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/2]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 11:47:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 2) [0m
+Rendering invoices/show
+Completed in 148ms (View: 144, DB: 0) | 200 OK [http://localhost/invoices/2.pdf]

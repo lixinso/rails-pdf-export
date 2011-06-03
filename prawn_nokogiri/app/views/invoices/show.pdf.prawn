@@ -1,3 +1,7 @@
+require 'parser'
+require 'generator'
+require 'prawn'
+
 pdf.move_down 70
 
 # Add the font style and size
@@ -8,4 +12,4 @@ pdf.text "helllo"
  
 pdf.text "======================"
 
-wrap(@invoice.html_content, pdf)
+Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
