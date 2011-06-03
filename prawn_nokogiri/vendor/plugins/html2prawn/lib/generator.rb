@@ -25,23 +25,27 @@ module Prawn
       
          # generate pdf      
          list[:html_list].each do |item|
-           case item 
-           when 'BREAK'
-             pdf.move_down break_height
-             ypos += break_height
-           when 'NEW_PAGE'
-             pdf.start_new_page
-           else
-             breaks = item.scan(/<br>/i).length + item.scan(/<br\/>/i).length
-             ypos = start_page_ypos if !ypos 
-             ypos += (breaks * break_height)
-             puts item
-             if item != nil
-               #pdf.text item, :inline_format => true
-               pdf.text item
-             end
-
-           end
+           #case item 
+           #when 'BREAK'
+           #  pdf.move_down break_height
+           #  ypos += break_height
+           #when 'NEW_PAGE'
+           #  pdf.start_new_page
+           #else
+           #  breaks = item.scan(/<br>/i).length + item.scan(/<br\/>/i).length
+           #  ypos = start_page_ypos if !ypos 
+           #  ypos += (breaks * break_height)
+           #  puts item
+           #  if item != nil
+           #    #pdf.text item, :inline_format => true
+           #    pdf.text item
+           #  end
+           #
+           #end
+           
+           
+           pdf.text item, :inline_format => true
+           
          end
        end
       #------------------------------------------------------------

@@ -54,4 +54,11 @@ String.class_eval do
     self.gsub!(/<#{tag}[^>]*>/i, marker)
     self.gsub!(/<#{tag}(.|\n)*?\/>/i, marker)
   end   
+  
+  def replace_tag_name!(tag, replace_str)
+    self.gsub!(/<\/#{tag}>/i, "</"+replace_str+">")
+    self.gsub!(/<#{tag}*>/i, "<"+replace_str+">")
+    self.gsub!(/<#{tag}*\/>/i, "<"+replace_str+"/>")
+  end
+  
 end

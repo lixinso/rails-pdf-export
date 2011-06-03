@@ -34,9 +34,26 @@ module Prawn
             html.add_after_end_tag!(tag, '<br/>')
           end
           
+          
+          #mappings = { :em => :i, :strong => :b, :s => :strikethrough, :strike => :strikethrough }
+          #mappings.keys.each do |key|
+          #  doc.xpath("//#{key}").each do |item|
+          #    item.name = mappings[key].to_s
+          #  end
+          #end
+          html.replace_tag_name!("em","i")
+          html.replace_tag_name!("strong","b")
+          html.replace_tag_name!("s","strikethrough")
+          html.replace_tag_name!("strike","strikethrough")
+          
+          
           doc = Nokogiri::HTML.parse(html)
           
+
+          
+          
           result = html
+          #result = doc.xpath("//body").to_s
           
           doc.css('ul').each do |ul|
             puts "parsing ul"
@@ -60,9 +77,16 @@ module Prawn
           result.replace_start_tags_marker!('p', @@BREAK_MARKER)
           result.strip_tags!('p')
           
+          result.replace_tags!('b', @@BREAK_MARKER)
+          #result.strip_tags!('b')
+          
            result.remove_newlines!
            
-           res_list = {:html_list => result.split(/:#:/)}
+           result.gsub!(/:#:/,"").gsub!(/&nbsp;/," ")
+           
+           
+           #res_list = {:html_list => result.split(/:#:/)}
+           res_list = {:html_list => result.split(/BREAK/)}
 
       
       end
