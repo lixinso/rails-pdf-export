@@ -3299,3 +3299,1486 @@ ActionController::RoutingError (No route matches "/resolutions" with {:method=>:
   /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 16:03:57) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 422ms (View: 419, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-03 17:01:41) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-03 17:01:55) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<ol>\r\n\t<li>\r\n\t\tlis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"YgacHmEoFpCL3RniZjfLL4N7foW4WcyMJgMM/obZxyw=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (0.3ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-03 09:01:55', "html_content" = '<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<ol>
+	<li>
+		lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-03 17:01:55) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-03 17:01:56) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 568ms (View: 564, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-06 07:54:42) [GET]
+  [4;36;1mInvoice Load (1.2ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 110ms (View: 105, DB: 1) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 07:54:46) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 30ms (View: 26, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 07:54:48) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined local variable or method `content' for Prawn::HTML5::Parser:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (78.5ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 07:55:10) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `sanitize' for Prawn::HTML5::Parser:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.6ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 07:55:49) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 07:55:50) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `sanitize' for Prawn::HTML5::Parser:Class) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (81.5ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 07:59:04) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (no such file to load -- html/sanitize) on line #1 of app/views/invoices/show.pdf.prawn:
+1: require 'parser'
+2: require 'generator'
+3: require 'prawn'
+4: 
+
+    app/views/invoices/show.pdf.prawn:1:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:47:20) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.4ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+
+ActionView::TemplateError (undefined method `erase_tags!' for #<Nokogiri::HTML::DocumentFragment:0x103303fa0>) on line #15 of app/views/invoices/show.pdf.prawn:
+12:  
+13: pdf.text "======================"
+14: 
+15: Prawn::HTML5::Generator.pdf(pdf, @invoice.html_content)
+
+    app/views/invoices/show.pdf.prawn:15:in `_run_prawn_app47views47invoices47show46pdf46prawn'
+    app/controllers/invoices_controller.rb:22:in `show'
+    app/controllers/invoices_controller.rb:19:in `show'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/admin/.rvm/rubies/ruby-1.8.7-p334/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:49:18) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 376ms (View: 372, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-06 08:49:35) [GET]
+  [4;35;1mInvoice Load (24.6ms)[0m   [0mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 160ms (View: 130, DB: 25) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 08:49:39) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-06 08:49:57) [GET]
+  [4;35;1mInvoice Load (0.3ms)[0m   [0mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#new (for 127.0.0.1 at 2011-06-06 08:49:59) [GET]
+Rendering template within layouts/invoices
+Rendering invoices/new
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/invoices/new]
+
+
+Processing InvoicesController#create (for 127.0.0.1 at 2011-06-06 08:50:06) [POST]
+  Parameters: {"commit"=>"Create", "invoice"=>{"html_content"=>"<p><p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp; "}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c="}
+  [4;36;1mInvoice Create (0.3ms)[0m   [0;1mINSERT INTO "invoices" ("created_at", "updated_at", "html_content") VALUES('2011-06-06 00:50:06', '2011-06-06 00:50:06', '<p><p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp; ')[0m
+Redirected to http://localhost:3000/invoices/7
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 08:50:06) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 39ms (View: 35, DB: 0) | 200 OK [http://localhost/invoices/7]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:50:08) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering invoices/show
+Completed in 251ms (View: 248, DB: 0) | 200 OK [http://localhost/invoices/7.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 08:50:20) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/7/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 08:50:50) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p><p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;\r\n<ol>\r\n<li>li1</li>\r\n<li>li2</li>\r\n</ol> "}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"7"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+  [4;35;1mInvoice Update (0.2ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 00:50:50', "html_content" = '<p><p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;
+<ol>
+<li>li1</li>
+<li>li2</li>
+</ol> ' WHERE "id" = 7[0m
+Redirected to http://localhost:3000/invoices/7
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/7]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 08:50:50) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/7]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:50:52) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering invoices/show
+Completed in 246ms (View: 243, DB: 0) | 200 OK [http://localhost/invoices/7.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 08:50:57) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/7/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 08:51:03) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p><p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;\r\n<ol>\r\n<li><li>li1</li>\r\n<li>li2</li>\r\n</ol> "}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"7"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 00:51:03', "html_content" = '<p><p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;
+<ol>
+<li><li>li1</li>
+<li>li2</li>
+</ol> ' WHERE "id" = 7[0m
+Redirected to http://localhost:3000/invoices/7
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/7]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 08:51:03) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/7]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:51:04) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering invoices/show
+Completed in 252ms (View: 248, DB: 0) | 200 OK [http://localhost/invoices/7.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 08:53:49) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/7/edit]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 08:53:55) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/7]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:53:57) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 7) [0m
+Rendering invoices/show
+Completed in 255ms (View: 251, DB: 0) | 200 OK [http://localhost/invoices/7.pdf]
+
+
+Processing InvoicesController#index (for 127.0.0.1 at 2011-06-06 08:54:03) [GET]
+  [4;36;1mInvoice Load (0.4ms)[0m   [0;1mSELECT * FROM "invoices" [0m
+Rendering template within layouts/invoices
+Rendering invoices/index
+Completed in 17ms (View: 13, DB: 0) | 200 OK [http://localhost/invoices]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 08:54:04) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:54:07) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 267ms (View: 264, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 08:54:13) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 08:55:23) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<ol>\r\n\t<li>\r\n\t\tlis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (22.9ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 00:55:23', "html_content" = '<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<ol>
+	<li>
+		lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 29ms (DB: 23) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 08:55:23) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 08:55:24) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 218ms (View: 214, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:16:27) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:16:40) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<ol>\r\n\t<li>\r\n\t\t<p>lis<em>t1</em>11<p></li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (0.3ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:16:40', "html_content" = '<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<ol>
+	<li>
+		<p>lis<em>t1</em>11<p></li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:16:40) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:16:41) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 359ms (View: 356, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:17:04) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:23:14) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<ol>\r\n\t<li>\r\n\t\t <p>lis<em>t1</em>11</p></li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (6.1ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:23:14', "html_content" = '<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<ol>
+	<li>
+		 <p>lis<em>t1</em>11</p></li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 13ms (DB: 6) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:23:14) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:23:15) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 292ms (View: 288, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:23:24) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 32ms (View: 29, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:23:49) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; lis<em>t1</em>11</p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:23:49', "html_content" = '<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; lis<em>t1</em>11</p>
+<ol>
+	<li>
+		 lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:23:49) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:23:50) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 268ms (View: 265, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:24:10) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:24:24) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"lis<em>t1</em>11\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (0.2ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:24:24', "html_content" = 'lis<em>t1</em>11
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:24:24) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:24:25) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 293ms (View: 235, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:24:55) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:24:59) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<br/>- hello<i>iiii</i> <br/>- li2 <br/>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (17.0ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:24:59', "html_content" = '<br/>- hello<i>iiii</i> <br/>- li2 <br/>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 24ms (DB: 17) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:24:59) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:25:00) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 263ms (View: 259, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:26:03) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:26:22) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"\r\n<p>\r\n<br/>- hello<i>iiii</i> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (42.5ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:26:22', "html_content" = '
+<p>
+<br/>- hello<i>iiii</i> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 50ms (DB: 43) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:26:22) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:26:23) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 268ms (View: 264, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:26:36) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:32:11) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<i>iiii</i> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.2ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (0.4ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:32:11', "html_content" = '<p>
+<br/>- hello<i>iiii</i> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:32:11) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:32:13) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 795ms (View: 792, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:34:11) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:54:08) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<i>iiii</i> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (14.0ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 20ms (DB: 14) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:54:08) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:54:10) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 578ms (View: 574, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:56:30) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:56:31) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 541ms (View: 537, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:56:39) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:57:01) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:57:01', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 lis<em>t1</em>11</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:57:01) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:57:02) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 280ms (View: 277, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:57:08) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:57:32) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  lis<em>t1</em>11</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:57:32) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:57:33) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 270ms (View: 266, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:57:45) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:57:57) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  <em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (22.6ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:57:57', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 <em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 30ms (DB: 23) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:57:57) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:57:58) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 227ms (View: 223, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:58:06) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 51ms (View: 48, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:58:25) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  ss<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:58:25', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 ss<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:58:25) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:58:26) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 274ms (View: 271, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:58:38) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (14.2ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 23ms (View: 5, DB: 14) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:58:48) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t  <em>Resolved,</em>ss the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (0.2ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:58:48', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 <em>Resolved,</em>ss the House of _______ concurring, That&nbsp;</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:58:48) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:58:49) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 273ms (View: 268, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:59:02) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:59:17) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\t\t ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:59:17', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+		 ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:59:17) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:59:18) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 289ms (View: 286, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:59:33) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 40ms (View: 37, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 09:59:40) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (0.3ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 01:59:40', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 54ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 09:59:40) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 09:59:41) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 295ms (View: 291, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 09:59:47) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 10:00:00) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\nddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;36;1mInvoice Update (0.2ms)[0m   [0;1mUPDATE "invoices" SET "updated_at" = '2011-06-06 02:00:00', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 10:00:00) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 10:00:01) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 275ms (View: 271, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 10:00:08) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 10:00:37) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+  [4;35;1mInvoice Update (0.2ms)[0m   [0mUPDATE "invoices" SET "updated_at" = '2011-06-06 02:00:37', "html_content" = '<p>
+<br/>- hello<em>iiii</em> <br/>- li2 <br/>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>
+<p>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>
+<ol>
+	<li>
+	ddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>
+	<li>
+		list222</li>
+	<li>
+		list333</li>
+</ol>
+<ul>
+	<li>
+		listAA</li>
+	<li>
+		listBB</li>
+	<li>
+		listCC</li>
+</ul>
+<p>
+	&nbsp;</p>
+<blockquote>
+	<p>
+		quote here</p>
+</blockquote>
+' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 10:00:37) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 10:00:38) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 282ms (View: 278, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 10:00:46) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/invoices/6/edit]
+
+
+Processing InvoicesController#update (for 127.0.0.1 at 2011-06-06 10:06:06) [PUT]
+  Parameters: {"commit"=>"Update", "invoice"=>{"html_content"=>"<p>\r\n<br/>- hello<em>iiii</em> <br/>- li2 <br/>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\t<em>Resolved,</em> the House of _______ concurring, That&nbsp;</p>\r\n<p>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp; </p>\r\n<ol>\r\n\t<li>\r\n\tddd<em>Resolved,</em> the House of _______ concurring, That&nbsp;</li>\r\n\t<li>\r\n\t\tlist222</li>\r\n\t<li>\r\n\t\tlist333</li>\r\n</ol>\r\n<ul>\r\n\t<li>\r\n\t\tlistAA</li>\r\n\t<li>\r\n\t\tlistBB</li>\r\n\t<li>\r\n\t\tlistCC</li>\r\n</ul>\r\n<p>\r\n\t&nbsp;</p>\r\n<blockquote>\r\n\t<p>\r\n\t\tquote here</p>\r\n</blockquote>\r\n"}, "authenticity_token"=>"PSgaQFf0gLDm4sxwMpV+Jr2fYA1e0mN9J5FKoAvE/2c=", "id"=>"6"}
+  [4;36;1mInvoice Load (18.8ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Redirected to http://localhost:3000/invoices/6
+Completed in 25ms (DB: 19) | 302 Found [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show (for 127.0.0.1 at 2011-06-06 10:06:06) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/show
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/invoices/6]
+
+
+Processing InvoicesController#show to pdf (for 127.0.0.1 at 2011-06-06 10:06:08) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mInvoice Load (0.1ms)[0m   [0;1mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering invoices/show
+Completed in 480ms (View: 476, DB: 0) | 200 OK [http://localhost/invoices/6.pdf]
+
+
+Processing InvoicesController#edit (for 127.0.0.1 at 2011-06-06 10:06:15) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mInvoice Load (0.1ms)[0m   [0mSELECT * FROM "invoices" WHERE ("invoices"."id" = 6) [0m
+Rendering template within layouts/invoices
+Rendering invoices/edit
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/invoices/6/edit]

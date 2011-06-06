@@ -37,6 +37,8 @@ String.class_eval do
   def replace_tags!(tag, replace_str)
     self.gsub!(/<#{tag}[^>]*>(.|\n)*?<\/#{tag}>/i, replace_str)
     self.gsub!(/<#{tag}[^>]*\/>/i, replace_str)
+    #new
+    self.gsub!(/<#{tag}>/i, replace_str)
   end
 
   # encure matches newlines (any white-space!) between tag markers 

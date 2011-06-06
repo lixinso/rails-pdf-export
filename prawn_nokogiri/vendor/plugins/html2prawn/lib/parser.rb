@@ -2,7 +2,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'string'
-
+ 
 
 
 
@@ -24,7 +24,11 @@ module Prawn
       #def self.html(html,options={})
       def self.html(html)
       
-          #TODO:sanitize before use?
+          #sanitize before use. In case of unexpected tags
+          #sanitize(html, :tags => %w(p strong em s strike u ul ol li hr))
+          
+          #using Nokogiri to fix invalid html
+          html = Nokogiri::HTML::DocumentFragment.parse(html).to_html
       
           @@DEFAULT_ERASE_TAGS.each do |tag|
             html.erase_tags!(tag)
@@ -51,7 +55,7 @@ module Prawn
           html.replace_tag_name!("strike","strikethrough")
           
           
-          doc = Nokogiri::HTML.parse(html)
+          doc = Nokogiri::HTML.parse(html.gsub(/\s+/, " "))
 
           result = html
           #result = doc.xpath("//body").to_s
